@@ -9,7 +9,6 @@
 
 #include <ncurses.h> // -lncurses
 
-//#define _GNU_SOURCE
 
 void ConjunctionFunction(int Burp)  {
 
@@ -40,7 +39,7 @@ int main()  {
   ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
   
   init_pair(1, ((ToughBuff % 7 ) + 1 ), COLOR_BLACK);
-  //init_pair(1, COLOR_RED, COLOR_BLACK);
+ 
   attron(COLOR_PAIR(1));
   mvprintw( (((ToughBuff & 0x000000FF) % w.ws_row ) - 0 ),
             (((ToughBuff & 0x000000FF) % w.ws_col ) - (strlen(string)) ), string);
